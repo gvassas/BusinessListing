@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Bootstrap/css/bootstrap.min.css")
+    @Scripts.Render("~/bundles/jquery")
+     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/Bootstrap/js/bootstrap.min.js")
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="brand" href="~/Home/Index">
+        <img src="~/Content/Book-icon.png" width="60" height="60"/></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <h3 class="navbar-text" >WaldoFinders Directory Service</h3>
+    <form class="navbar-form navbar-left" role="search" action="@Url.Action("Index", "Home")", method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="searchString">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li>@Html.ActionLink("Login", "Login")</li>
+      <li>@Html.ActionLink("Directory", "Index")</li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+    @RenderBody()
+
+    
+    @RenderSection("scripts", required: false)
+       
+</body>
+</html>

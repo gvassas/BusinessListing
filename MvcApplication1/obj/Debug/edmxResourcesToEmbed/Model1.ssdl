@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusinessListingsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BusinessListingsModelStoreContainer">
+    <EntitySet Name="DBUser" EntityType="BusinessListingsModel.Store.DBUser" store:Type="Tables" Schema="guillaume" />
+    <EntitySet Name="Organization" EntityType="BusinessListingsModel.Store.Organization" store:Type="Tables" Schema="guillaume" />
+  </EntityContainer>
+  <EntityType Name="DBUser">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Password" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Contact fName" Type="varchar" MaxLength="30" />
+    <Property Name="Contact lName" Type="varchar" MaxLength="30" />
+    <Property Name="Phone" Type="varchar" MaxLength="30" />
+    <Property Name="Street Address" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="30" />
+    <Property Name="Province" Type="varchar" MaxLength="30" />
+    <Property Name="Country" Type="varchar" MaxLength="30" />
+    <Property Name="Postal Code" Type="varchar" MaxLength="30" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="latitude" Type="float" Nullable="false" />
+    <Property Name="longitude" Type="float" Nullable="false" />
+  </EntityType>
+</Schema>

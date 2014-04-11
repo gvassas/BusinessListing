@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusinessListingsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BusinessListingsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="DBUsers" EntityType="BusinessListingsModel.DBUser" />
+    <EntitySet Name="Organizations" EntityType="BusinessListingsModel.Organization" />
+  </EntityContainer>
+  <EntityType Name="DBUser">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Contact_fName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Contact_lName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Street_Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Province" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Postal_Code" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="latitude" Type="Double" Nullable="false" />
+    <Property Name="longitude" Type="Double" Nullable="false" />
+  </EntityType>
+</Schema>

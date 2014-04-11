@@ -1,0 +1,46 @@
+﻿@model MvcApplication1.Organization
+
+@{
+    if (HttpContext.Current.Session["Log"] == "true")
+    {
+        Layout = "~/Views/Shared/_loggedIn.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-xb-mlhTxjeOeIbZ4-ZAKONtii6Rm2C4&sensor=false"></script>
+<script src="~/Scripts/maps.js"></script>
+
+
+
+    <dl class="col-xs-12 col-sm-10 col-md-4 dl-horizontal">
+     <dt>Company Name:</dt>   <dd>@Html.DisplayFor(model => model.Name)</dd>   
+   <dt>Contact First Name:</dt>  <dd>@Html.DisplayFor(model => model.Contact_fName)</dd>
+      <dt>Contact Last Name:</dt>  <dd>@Html.DisplayFor(model => model.Contact_lName)</dd>
+      <dt>Phone Number:</dt>   <dd>@Html.DisplayFor(model => model.Phone)</dd>
+      <dt>Street Address:</dt>   <dd>@Html.DisplayFor(model => model.Street_Address)</dd>
+
+      <dt>City:</dt>   <dd>@Html.DisplayFor(model => model.City)</dd>
+
+       <dt>Province:</dt>  <dd>@Html.DisplayFor(model => model.Province)</dd>
+      <dt>Country:</dt>   <dd>@Html.DisplayFor(model => model.Country)</dd>
+      <dt>Postal Code:</dt>   <dd>@Html.DisplayFor(model => model.Postal_Code)</dd>
+    </dl>
+
+
+
+
+<div class="display-field" id="latitude" style="display: none">
+    @Html.DisplayFor(model => model.latitude)
+</div>
+
+<div class="display-field" id="longitude" style="display: none">
+    @Html.DisplayFor(model => model.longitude)
+</div>
+
+
+<div id="googleMap" class="" style="width: 500px; height: 400px; "></div>
+
+<script type="text/javascript">google.maps.event.addDomListener(window, 'load', initialize);</script>
